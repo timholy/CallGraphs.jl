@@ -60,3 +60,11 @@ which produces output that looks like this:
 Shown in red are all functions that might trigger a call to `jl_gc_collect`.
 The general principle is to look for cases where one line's allocation is not protected from
 a later garbage-collection.
+
+You can save a (crude) emacs highlighting file with
+
+```julia
+emacs_highlighting(filename, gcnames)
+```
+
+which you can `M-x load-file` after opening a C file.

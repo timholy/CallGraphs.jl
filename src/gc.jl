@@ -43,3 +43,25 @@ function highlightgc(srcfilename, gcnames::Set)
         print(takebuf_string(modline))
     end
 end
+
+@doc """
+```
+emacs_highlighting(filename, funcnames, face="font-lock-warning-face")
+```
+Creates an emacs highlighting file from a list of function names.
+""" ->
+function emacs_highlighting(filename, funcnames, face="font-lock-warning-face")
+    open(filename, "w") do file
+        print(file, "(defvar CallGraphFuncs\n  '((\"\\\\<\\\\(")
+        first = true
+        for fname in funcnames
+            if !first
+                print(file, "\\\\|")
+            end
+            print(file, fname)
+            first = false
+        end
+        println(file, "\\\\)\\\\>\" . '$face)))")
+        println(file, "\n(font-lock-add-keywords 'c-mode CallGraphFuncs)")
+    end
+end

@@ -1,7 +1,7 @@
 module CallGraphs
 
 import Base: hash, isless
-export FileFunction, combine, findcallers, findgc, highlightgc, parsedot, parsedots
+export FileFunction, combine, emacs_highlighting, findcallers, findgc, highlightgc, parsedot, parsedots
 
 const rnode = r"Node(\w+)"     # for extracting the Node# from a .dot file
 const rlabel = r"\"{(.*)}\""   # for extracting the function name from a "label" in a .dot file
