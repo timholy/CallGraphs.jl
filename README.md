@@ -12,7 +12,7 @@ the package has broader uses.
 Add with
 
 ```julia
-Pkg.clone("CallGraphs")
+Pkg.clone("https://github.com/timholy/CallGraphs.jl.git")
 ```
 
 You'll also need to have `clang++` installed, as well at the corresponding `opt` tool.
