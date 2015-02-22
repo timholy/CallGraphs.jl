@@ -11,7 +11,8 @@ function findgc(dirname=".")
     cgs = parsedots(dirname)
     calls, calledby = combine(cgs...)
     callers = findcallers(calledby, "jl_gc_collect")
-    uniquenames(callers)
+    union!(callers, findcallers(calledby, "jl_apply"))
+    uniquenames([callers...])
 end
 
 @doc """

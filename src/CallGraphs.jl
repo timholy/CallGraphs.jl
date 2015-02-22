@@ -204,7 +204,7 @@ function findcallers(calledby, funcname; indirect::Bool=true)
             callers = newcallers
         end
     end
-    [callers...]
+    callers
 end
 
 @doc """
