@@ -1,0 +1,3 @@
+#define __STDC_LIMIT_MACROS
+#define __STDC_CONSTANT_MACROS
+#define JL_SYSTEM_IMAGE_PATH "../lib/julia/sys.ji"
